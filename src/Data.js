@@ -1,5 +1,5 @@
 const school = {
-  name: 'Khukurdaha I C M M High School',
+  name: 'Khukurdaha I C M M High SchoolS',
 
   about: 'Some About of scholl to be inserted here',
 
