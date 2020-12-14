@@ -38,6 +38,11 @@ export default function HeaderLinks(props) {
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
+        <Button onClick={() => handleBackClick('history')} color="transparent" target="_blank" className={classes.navLink}>
+          History
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
         <Button onClick={() => handleBackClick('notification')} color="transparent" target="_blank" className={classes.navLink}>
           Notice Board
         </Button>

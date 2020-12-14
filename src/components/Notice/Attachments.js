@@ -19,11 +19,11 @@ export default function Attachments(props) {
   const getData = async () => {
     const data = {};
     const response = await jsonRef.then((doc) => {
-      console.log(doc.toString());
+      // console.log(doc.toString());
       var httpsReference = firebase.storage().refFromURL(doc.toString());
-      console.log(httpsReference.toString());
+      // console.log(httpsReference.toString());
       // data = JSON.parse(httpsReference);
-      console.log(data);
+      // console.log(data);
     });
   };
 
@@ -36,7 +36,7 @@ export default function Attachments(props) {
       });
     });
     items.forEach((item) => {
-      console.log(item.name);
+      // console.log(item.name);
     });
   };
 

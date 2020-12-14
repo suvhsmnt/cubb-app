@@ -18,7 +18,7 @@ const Scrollbar = {
     height: '100px',
 
     borderRadius: '5px',
-    backgroundColor: '#4caf50',
+    backgroundColor: '#00acc1',
   },
   track_vertical: {
     position: 'absolute',

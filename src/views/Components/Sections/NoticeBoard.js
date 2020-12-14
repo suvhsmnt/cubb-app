@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -22,13 +22,16 @@ import Attachments from 'components/Notice/Attachments';
 const useStyles = makeStyles(styles);
 
 export default function NoticeBoard(props) {
-  const { ...rest } = props;
+  const [notice, setNotice] = React.useState(props.notice | {});
   const classes = useStyles();
+
+  useEffect(() => setNotice(props.notice), [props.notice]);
+
   return (
     <div className={classes.section}>
       <div className={classes.container}>
         <NavPills
-          color="success"
+          color="info"
           horizontal={{
             tabsGrid: { xs: 12, sm: 3, md: 2 },
             contentGrid: { xs: 12, sm: 9, md: 10 },
@@ -37,22 +40,22 @@ export default function NoticeBoard(props) {
             {
               tabButton: 'Announcements',
               tabIcon: Schedule,
-              tabContent: <Announcements />,
+              tabContent: <Announcements announcements={notice === undefined ? [] : notice.announcements} />,
             },
             {
               tabButton: 'Notice',
               tabIcon: Dashboard,
-              tabContent: <Notice />,
+              tabContent: <Notice notices={notice === undefined ? [] : notice.notices} />,
             },
             {
               tabButton: 'Events',
               tabIcon: List,
-              tabContent: <Events />,
+              tabContent: <Events events={notice === undefined ? [] : notice.events} />,
             },
             {
               tabButton: 'Attachments',
               tabIcon: Download,
-              tabContent: <Attachments />,
+              tabContent: <Attachments attachments={notice === undefined ? [] : notice.attachments} />,
             },
           ]}
         />

@@ -12,48 +12,34 @@ import GridItem from 'components/Grid/GridItem.js';
 import firebase from '../../Firebase';
 
 export default function Notice(props) {
-  const [notices, setNotices] = React.useState([]);
-  const [loading, setLoading] = React.useState(false);
-
-  const ref = firebase.firestore().collection('Events').where('type', '==', 'NOTICE');
-
-  const getNotice = () => {
-    setLoading(true);
-    ref.onSnapshot((querySnapshot) => {
-      const items = [];
-      querySnapshot.forEach((doc) => {
-        items.push(doc.data());
-      });
-      setNotices(items);
-      setLoading(false);
-    });
-  };
+  const [notices, setNotices] = React.useState(props.notices === undefined ? [] : props.notices);
 
   useEffect(() => {
-    getNotice();
-  }, []);
+    setNotices(props.notices);
+  }, [props.notices]);
 
   return (
     <ScrollBar height={550}>
       <ToastContainer />
-      {notices.map((notice) => (
-        <div style={{ marginBottom: 50 }}>
-          <Card>
-            <CardHeader color="success">{notice.title}</CardHeader>
-            <CardBody> {notice.description}</CardBody>
-            <CardFooter>
-              <GridContainer xs={12} sm={12} md={12} lg={12} alignContent="center" alignItems="center" justify="center">
-                <GridItem xs={12} sm={12} md={6} lg={6} alignContent="center" alignItems="center" justify="center">
-                  Time : {notice.time.toDate().toDateString()}
-                </GridItem>
-                <GridItem xs={12} sm={12} md={6} lg={6}>
-                  Time : {notice.time.toDate().toDateString()}
-                </GridItem>
-              </GridContainer>
-            </CardFooter>
-          </Card>
-        </div>
-      ))}
+      {notices != undefined &&
+        notices.map((notice) => (
+          <div style={{ marginBottom: 50 }}>
+            <Card>
+              <CardHeader color="info">{notice.title}</CardHeader>
+              <CardBody> {notice.description}</CardBody>
+              <CardFooter>
+                <GridContainer xs={12} sm={12} md={12} lg={12} alignContent="center" alignItems="center" justify="center">
+                  <GridItem xs={12} sm={12} md={6} lg={6} alignContent="center" alignItems="center" justify="center">
+                    <div> Time : {notice.time}</div>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={6} lg={6}>
+                    Time : {notice.time}
+                  </GridItem>
+                </GridContainer>
+              </CardFooter>
+            </Card>
+          </div>
+        ))}
     </ScrollBar>
   );
 }
