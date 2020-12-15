@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/cubb-app/static/css/main.b71174a7.chunk.css",
-    "main.js": "/cubb-app/static/js/main.0108ae46.chunk.js",
-    "main.js.map": "/cubb-app/static/js/main.0108ae46.chunk.js.map",
+    "main.js": "/cubb-app/static/js/main.f21b3a88.chunk.js",
+    "main.js.map": "/cubb-app/static/js/main.f21b3a88.chunk.js.map",
     "runtime-main.js": "/cubb-app/static/js/runtime-main.42c2a0da.js",
     "runtime-main.js.map": "/cubb-app/static/js/runtime-main.42c2a0da.js.map",
     "static/css/2.7cc276b6.chunk.css": "/cubb-app/static/css/2.7cc276b6.chunk.css",
     "static/js/2.b09a301b.chunk.js": "/cubb-app/static/js/2.b09a301b.chunk.js",
     "static/js/2.b09a301b.chunk.js.map": "/cubb-app/static/js/2.b09a301b.chunk.js.map",
     "index.html": "/cubb-app/index.html",
-    "precache-manifest.e28f709bef2676f90253453af291f251.js": "/cubb-app/precache-manifest.e28f709bef2676f90253453af291f251.js",
+    "precache-manifest.3282c6c997a7955dda1e168d48611aba.js": "/cubb-app/precache-manifest.3282c6c997a7955dda1e168d48611aba.js",
     "service-worker.js": "/cubb-app/service-worker.js",
     "static/css/2.7cc276b6.chunk.css.map": "/cubb-app/static/css/2.7cc276b6.chunk.css.map",
     "static/css/main.b71174a7.chunk.css.map": "/cubb-app/static/css/main.b71174a7.chunk.css.map",
@@ -40,6 +40,6 @@
     "static/css/2.7cc276b6.chunk.css",
     "static/js/2.b09a301b.chunk.js",
     "static/css/main.b71174a7.chunk.css",
-    "static/js/main.0108ae46.chunk.js"
+    "static/js/main.f21b3a88.chunk.js"
   ]
 }

@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "14527846871308ac9699aa78e899afab",
+    "revision": "6b8438ccc739270638863973af95a352",
     "url": "/cubb-app/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cubb-app/static/css/2.7cc276b6.chunk.css"
   },
   {
-    "revision": "4e4623eb0d04455a3fed",
+    "revision": "9043a48d22af73c6c07b",
     "url": "/cubb-app/static/css/main.b71174a7.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cubb-app/static/js/2.b09a301b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4e4623eb0d04455a3fed",
-    "url": "/cubb-app/static/js/main.0108ae46.chunk.js"
+    "revision": "9043a48d22af73c6c07b",
+    "url": "/cubb-app/static/js/main.f21b3a88.chunk.js"
   },
   {
     "revision": "a7416eaa6cb80b2f731a",
