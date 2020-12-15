@@ -28,6 +28,7 @@ export default function ImageGallaryComponent(props) {
 
   const settingsMain = {
     slidesToShow: 1,
+    speed: 500,
     slidesToScroll: 1,
     arrows: false,
     fade: true,
