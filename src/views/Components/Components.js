@@ -14,6 +14,8 @@ import GridItem from '../../components/Grid/GridItem.js';
 import History from './School/History';
 import Parallax from 'components/Parallax/Parallax.js';
 // sections for this page
+import Avatar from '@material-ui/core/Avatar';
+import AppIcon from '../../assets/img/apple-icon.png';
 import HeaderLinks from 'components/Header/HeaderLinks.js';
 import NoticeBoard from './Sections/NoticeBoard';
 import SectionAdministration from './Sections/SectionAdministration.js';
@@ -21,8 +23,12 @@ import ImageGallaryComponent from './Sections/ImageGallaryComponent';
 import styles from 'assets/jss/material-kit-react/views/components.js';
 import http from '../../axiosInterceptor';
 import About from './School/About';
+import Logo from 'assets/img/apple-icon.png';
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Faculty from './School/Faculty';
+import Contact from './School/Contact';
 
 const useStyles = makeStyles(styles);
 
@@ -35,6 +41,8 @@ export default function Components(props) {
   const notification = React.useRef(null);
   const gallary = React.useRef(null);
   const administration = React.useRef(null);
+  const faculty = React.useRef(null);
+  const contact = React.useRef(null);
 
   const loadData = async () => {
     try {
@@ -80,6 +88,16 @@ export default function Components(props) {
         behavior: 'smooth',
         block: 'start',
       });
+    } else if (to === 'faculty') {
+      faculty.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    } else if (to === 'contact') {
+      contact.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -90,10 +108,22 @@ export default function Components(props) {
       <ToastContainer position="top-center" newestOnTop={true} />
       <Header
         handleBackClick={onButtonClick}
-        brand={data.name}
+        brand={
+          <div>
+            <GridContainer alignContent="center" alignItems="center" justify="center">
+              <GridItem xs={4} sm={4} md={4} lg={2} alignContent="center" alignItems="center" justify="center">
+                <Avatar alt="Remy Sharp" src={Logo} className={classes.large} />
+              </GridItem>
+              <GridItem xs={8} sm={8} md={8} lg={10} alignContent="center" alignItems="center" justify="center">
+                {data.name}
+              </GridItem>
+            </GridContainer>
+          </div>
+        }
         rightLinks={<HeaderLinks handleBackClick={onButtonClick} />}
+        color="info"
         fixed
-        color="warning"
+        handleBackClick={onButtonClick}
         changeColorOnScroll={{
           height: 350,
           color: 'white',
@@ -125,10 +155,16 @@ export default function Components(props) {
           <NoticeBoard notice={data.notice} />
         </div>
         <div ref={gallary}>
-          <ImageGallaryComponent />
+          <ImageGallaryComponent gallary={data.gallary} />
         </div>
         <div ref={administration}>
-          <SectionAdministration />
+          <SectionAdministration administration={data.administration} />
+        </div>
+        <div ref={faculty}>
+          <Faculty faculties={data.faculty} />
+        </div>
+        <div ref={contact}>
+          <Contact contacts={data.contact} />
         </div>
 
         {/* <SectionPills /> */}

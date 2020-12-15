@@ -4,22 +4,22 @@ import { makeStyles } from '@material-ui/core/styles';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './App.css';
+import '../Sections/App.css';
 import styles from 'assets/jss/material-kit-react/views/componentsSections/typographyStyle.js';
 
 import image from 'assets/img/faces/avatar.jpg';
 const useStyles = makeStyles(styles);
-export default function SectionAdministration(props) {
+export default function Faculty(props) {
   const classes = useStyles();
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   const [slider1, setSlider1] = useState(null);
   const [slider2, setSlider2] = useState(null);
-  const [administration, setAdministration] = React.useState(props.administration === undefined ? [] : props.administration);
+  const [faculties, setFaculties] = React.useState(props.faculties === undefined ? [] : props.faculties);
 
   useEffect(() => {
-    setAdministration(props.administration);
-  }, [props.administration]);
+    setFaculties(props.faculties);
+  }, [props.faculties]);
 
   useEffect(() => {
     setNav1(slider1);
@@ -106,13 +106,13 @@ export default function SectionAdministration(props) {
     <div className={classes.section}>
       <div className={classes.container}>
         <div className={classes.title}>
-          <h2>Administration</h2>
+          <h2>Faculty</h2>
         </div>
         <br />
 
         <Slider {...settingsThumbs} asNavFor={nav1} ref={(slider) => setSlider2(slider)}>
-          {administration != undefined &&
-            administration.map((slide) => (
+          {faculties != undefined &&
+            faculties.map((slide) => (
               /* {slidesData.map((slide) => ( */
               <div className="slick-slide pad" key={slide.id}>
                 <img src={slide.link} alt="..." className={classes.imgRounded + ' ' + classes.imgFluid} />

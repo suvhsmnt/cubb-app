@@ -9,12 +9,17 @@ import './App.css';
 import styles from 'assets/jss/material-kit-react/views/componentsSections/typographyStyle.js';
 
 const useStyles = makeStyles(styles);
-export default function ImageGallaryComponent() {
+export default function ImageGallaryComponent(props) {
   const classes = useStyles();
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   const [slider1, setSlider1] = useState(null);
   const [slider2, setSlider2] = useState(null);
+  const [gallary, setGallary] = React.useState(props.notices === gallary ? [] : props.gallary);
+
+  useEffect(() => {
+    setGallary(props.gallary);
+  }, [props.gallary]);
 
   useEffect(() => {
     setNav1(slider1);
@@ -99,21 +104,23 @@ export default function ImageGallaryComponent() {
       <div className={classes.container}>
         <div className="slider-wrapper">
           <Slider {...settingsMain} asNavFor={nav2} ref={(slider) => setSlider1(slider)}>
-            {slidesData.map((slide) => (
-              <div className="slick-slide" key={slide.id}>
-                <h2 className="slick-slide-title">{slide.title}</h2>
-                <img className="slick-slide-image" src={`https://picsum.photos/800/400?img=${slide.id}`} />
-              </div>
-            ))}
+            {gallary != undefined &&
+              gallary.map((slide) => (
+                <div className="slick-slide" key={slide.id}>
+                  <h2 className="slick-slide-title">{slide.title}</h2>
+                  <img className="slick-slide-image" src={slide.link} />
+                </div>
+              ))}
           </Slider>
         </div>
         <div className="thumbnail-slider-wrap">
           <Slider {...settingsThumbs} asNavFor={nav1} ref={(slider) => setSlider2(slider)}>
-            {slidesData.map((slide) => (
-              <div className="slick-slide" key={slide.id}>
-                <img className="slick-slide-image" src={`https://picsum.photos/800/400?img=${slide.id}`} />
-              </div>
-            ))}
+            {gallary != undefined &&
+              gallary.map((slide) => (
+                <div className="slick-slide" key={slide.id}>
+                  <img className="slick-slide-image" src={slide.link} />
+                </div>
+              ))}
           </Slider>
         </div>
       </div>

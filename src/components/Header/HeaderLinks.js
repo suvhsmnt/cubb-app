@@ -1,5 +1,5 @@
 /*eslint-disable*/
-import React from 'react';
+import React, { useEffect } from 'react';
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
 // react components for routing our app without refresh
@@ -28,6 +28,7 @@ const useNavStyles = makeStyles(NavStyle);
 
 export default function HeaderLinks(props) {
   const { handleBackClick } = props;
+
   const classes = useStyles();
   const navClasses = useNavStyles();
   return (
@@ -56,6 +57,11 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
         <Button onClick={() => handleBackClick('administration')} color="transparent" target="_blank" className={classes.navLink}>
           Administration
+        </Button>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button onClick={() => handleBackClick('faculty')} color="transparent" target="_blank" className={classes.navLink}>
+          Faculty
         </Button>
       </ListItem>
 

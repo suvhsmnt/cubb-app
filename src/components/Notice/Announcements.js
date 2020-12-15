@@ -28,42 +28,28 @@ export default function Announcements(props) {
   }, [props.announcements]);
 
   return (
-    <div style={{ marginBottom: 50 }}>
-      <Card>
-        <CardHeader color="info" className={classes.cardHeader}>
-          <GridContainer justify="center">
-            <GridItem xs={12} sm={4} md={4}>
-              Announcements
-            </GridItem>
-          </GridContainer>
-        </CardHeader>
-
-        <CardBody className={classes.cardBody}>
-          <ScrollBar height={550}>
-            {announcements != undefined &&
-              announcements.map((announcement) => (
-                <div style={{ marginBottom: 50 }}>
-                  <Card>
-                    <CardHeader color="info">{announcement.title}</CardHeader>
-                    <CardBody>
-                      <GridContainer justify="center">
-                        <GridItem xs={12} sm={12} md={12}>
-                          <img
-                            src={announcement.link}
-                            alt="..."
-                            style={{ height: 1000, widows: 750 }}
-                            className={example.imgRaised + ' ' + example.imgRounded + ' ' + example.imgFluid}
-                          />
-                        </GridItem>
-                      </GridContainer>
-                    </CardBody>
-                    <CardFooter></CardFooter>
-                  </Card>
-                </div>
-              ))}
-          </ScrollBar>
-        </CardBody>
-      </Card>
-    </div>
+    <ScrollBar height={550}>
+      {announcements != undefined &&
+        announcements.map((announcement) => (
+          <div style={{ marginBottom: 50 }}>
+            <Card>
+              <CardHeader color="info">{announcement.title}</CardHeader>
+              <CardBody>
+                <GridContainer justify="center">
+                  <GridItem xs={12} sm={12} md={12}>
+                    <img
+                      src={announcement.link}
+                      alt="..."
+                      style={{ height: 1000, widows: 750 }}
+                      className={example.imgRaised + ' ' + example.imgRounded + ' ' + example.imgFluid}
+                    />
+                  </GridItem>
+                </GridContainer>
+              </CardBody>
+              <CardFooter></CardFooter>
+            </Card>
+          </div>
+        ))}
+    </ScrollBar>
   );
 }

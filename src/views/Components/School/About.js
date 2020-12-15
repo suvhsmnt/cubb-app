@@ -20,7 +20,7 @@ export default function About(props) {
       <div className={classes.container}>
         <GridContainer justify="center">
           <GridItem xs={12} sm={12} md={8}>
-            <h2>About</h2>
+            <h2>About Us</h2>
             <h4>{about}</h4>
           </GridItem>
         </GridContainer>
