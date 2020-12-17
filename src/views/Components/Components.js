@@ -112,7 +112,8 @@ export default function Components(props) {
           <div>
             <GridContainer alignContent="center" alignItems="center" justify="center">
               <GridItem xs={4} sm={4} md={4} lg={2} alignContent="center" alignItems="center" justify="center">
-                <Avatar alt="Remy Sharp" src={Logo} className={classes.large} />
+                <img src={data.logo} alt="logo" style={{ height: 55, width: 55 }} />
+                {/* <Avatar alt="Remy Sharp" src={data.logo} className={classes.large} /> */}
               </GridItem>
               <GridItem xs={8} sm={8} md={8} lg={10} alignContent="center" alignItems="center" justify="center">
                 {data.name}
@@ -146,24 +147,32 @@ export default function Components(props) {
 
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div ref={about}>
+          <br />
           <About about={data.about} />
         </div>
+
         <div ref={history}>
+          <br />
           <History history={data.history} />
         </div>
         <div ref={notification}>
+          <br />
           <NoticeBoard notice={data.notice} />
         </div>
         <div ref={gallary}>
+          <br />
           <ImageGallaryComponent gallary={data.gallary} />
         </div>
         <div ref={administration}>
+          <br />
           <SectionAdministration administration={data.administration} />
         </div>
         <div ref={faculty}>
+          <br />
           <Faculty faculties={data.faculty} />
         </div>
         <div ref={contact}>
+          <br />
           <Contact contacts={data.contact} />
         </div>
 

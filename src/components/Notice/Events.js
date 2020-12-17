@@ -7,7 +7,8 @@ import CardHeader from 'components/Card/CardHeader.js';
 import CardFooter from 'components/Card/CardFooter.js';
 import ScrollBar from 'components/ScrollBar/ScollBar';
 import { ToastContainer, toast } from 'react-toastify';
-import firebase from '../../Firebase';
+import GridContainer from 'components/Grid/GridContainer.js';
+import GridItem from 'components/Grid/GridItem.js';
 
 export default function Events(props) {
   const [events, setEvents] = React.useState(props.events);
@@ -23,9 +24,23 @@ export default function Events(props) {
         events.map((event) => (
           <div style={{ marginBottom: 50 }}>
             <Card>
-              <CardHeader color="info">{event.title}</CardHeader>
-              <CardBody>{event.description}</CardBody>
-              <CardFooter>Time : {event.time}</CardFooter>
+              <CardHeader color="info">
+                <div style={{ textAlign: 'center' }}>{event.title}</div>
+              </CardHeader>
+              <CardBody>
+                <div style={{ textAlign: 'center' }}> {event.description}</div>
+              </CardBody>
+
+              <CardFooter>
+                <GridContainer xs={12} sm={12} md={12} lg={12} alignContent="center" alignItems="center" justify="center">
+                  <GridItem xs={12} sm={12} md={6} lg={6} alignContent="center" alignItems="center" justify="center">
+                    <div style={{ textAlign: 'center' }}> Time : {event.time}</div>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={6} lg={6}>
+                    <div style={{ textAlign: 'center' }}> Place : {event.place}</div>
+                  </GridItem>
+                </GridContainer>
+              </CardFooter>
             </Card>
           </div>
         ))}

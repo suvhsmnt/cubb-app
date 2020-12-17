@@ -25,15 +25,19 @@ export default function Notice(props) {
         notices.map((notice) => (
           <div style={{ marginBottom: 50 }}>
             <Card>
-              <CardHeader color="info">{notice.title}</CardHeader>
-              <CardBody> {notice.description}</CardBody>
+              <CardHeader color="info">
+                <div style={{ textAlign: 'center' }}> {notice.title}</div>
+              </CardHeader>
+              <CardBody>
+                <div style={{ textAlign: 'center' }}> {notice.description}</div>
+              </CardBody>
               <CardFooter>
                 <GridContainer xs={12} sm={12} md={12} lg={12} alignContent="center" alignItems="center" justify="center">
                   <GridItem xs={12} sm={12} md={6} lg={6} alignContent="center" alignItems="center" justify="center">
-                    <div> Time : {notice.time}</div>
+                    <div style={{ textAlign: 'center' }}> Time : {notice.time}</div>
                   </GridItem>
                   <GridItem xs={12} sm={12} md={6} lg={6}>
-                    Time : {notice.time}
+                    <div style={{ textAlign: 'center' }}> Place : {notice.place}</div>
                   </GridItem>
                 </GridContainer>
               </CardFooter>

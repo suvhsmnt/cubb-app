@@ -30,19 +30,25 @@ export default function ImageGallaryComponent(props) {
     slidesToShow: 1,
     speed: 500,
     slidesToScroll: 1,
-    arrows: false,
+    swipeToSlide: true,
+    arrows: true,
     fade: true,
+    autoPlay: true,
+    autoplaySpeed: 1000,
     asNavFor: '.slider-nav',
   };
 
   const settingsThumbs = {
     slidesToShow: 5,
     slidesToScroll: 1,
+    speed: 500,
     asNavFor: '.slider-for',
     centerMode: true,
     swipeToSlide: true,
     focusOnSelect: true,
     centerPadding: '10px',
+    autoPlay: true,
+    autoplaySpeed: 1000,
     responsive: [
       {
         breakpoint: 700,
@@ -68,38 +74,6 @@ export default function ImageGallaryComponent(props) {
     ],
   };
 
-  const slidesData = [
-    {
-      id: 1,
-      title: 'repellendus id ullam',
-      label: 'Dolorem officiis temporibus.',
-    },
-    {
-      id: 2,
-      title: 'excepturi consequatur est',
-      label: 'Officia non provident dolor esse et neque.',
-    },
-    {
-      id: 3,
-      title: 'eius doloribus blanditiis',
-      label: 'Ut recusandae vel vitae molestiae id soluta.',
-    },
-    {
-      id: 4,
-      title: 'nihil voluptates delectus',
-      label: 'Qui vel consequatur recusandae illo repellendus.',
-    },
-    {
-      id: 5,
-      title: 'nemo dolorem necessitatibus',
-      label: 'Placeat odit velit itaque voluptatem.',
-    },
-    {
-      id: 6,
-      title: 'dolorem quibusdam quasi',
-      label: 'Adipisci officiis repudiandae.',
-    },
-  ];
   return (
     <div className={classes.section}>
       <div className={classes.container}>
