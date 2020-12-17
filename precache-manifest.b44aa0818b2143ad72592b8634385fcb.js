@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6b8438ccc739270638863973af95a352",
+    "revision": "97852979d7985204894f1562bde1dca8",
     "url": "/cubb-app/index.html"
   },
   {
-    "revision": "d7f29e80d0e403ea6c18",
+    "revision": "4d8b96d06ea53ea88516",
     "url": "/cubb-app/static/css/2.7cc276b6.chunk.css"
   },
   {
-    "revision": "9043a48d22af73c6c07b",
+    "revision": "98bfb43514c59782e2e7",
     "url": "/cubb-app/static/css/main.b71174a7.chunk.css"
   },
   {
-    "revision": "d7f29e80d0e403ea6c18",
-    "url": "/cubb-app/static/js/2.b09a301b.chunk.js"
+    "revision": "4d8b96d06ea53ea88516",
+    "url": "/cubb-app/static/js/2.74c99594.chunk.js"
   },
   {
     "revision": "8d4397d7ff2a7353f55aa3cae1e33c92",
-    "url": "/cubb-app/static/js/2.b09a301b.chunk.js.LICENSE.txt"
+    "url": "/cubb-app/static/js/2.74c99594.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9043a48d22af73c6c07b",
-    "url": "/cubb-app/static/js/main.f21b3a88.chunk.js"
+    "revision": "98bfb43514c59782e2e7",
+    "url": "/cubb-app/static/js/main.61f00f4d.chunk.js"
   },
   {
     "revision": "a7416eaa6cb80b2f731a",
