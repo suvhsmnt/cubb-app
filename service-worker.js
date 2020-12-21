@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/cubb-app/precache-manifest.b44aa0818b2143ad72592b8634385fcb.js"
+  "/cubb-app/precache-manifest.5092b33058d49dfbb751bf6054df8658.js"
 );
 
 self.addEventListener('message', (event) => {
