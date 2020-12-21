@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 // @material-ui/icons
 import GridContainer from 'components/Grid/GridContainer.js';
 import GridItem from 'components/Grid/GridItem.js';
-import Button from 'components/CustomButtons/Button.js';
 // core components
 import styles from 'assets/jss/material-kit-react/views/componentsSections/downloadStyle.js';
 

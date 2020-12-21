@@ -9,7 +9,6 @@ import ScrollBar from 'components/ScrollBar/ScollBar';
 import { ToastContainer, toast } from 'react-toastify';
 import GridContainer from 'components/Grid/GridContainer.js';
 import GridItem from 'components/Grid/GridItem.js';
-import firebase from '../../Firebase';
 
 export default function Notice(props) {
   const [notices, setNotices] = React.useState(props.notices === undefined ? [] : props.notices);

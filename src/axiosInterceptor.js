@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 import { toast } from 'react-toastify';
-import { baseUrl, chekAdminAuth, getAdmin, getToken } from './Config.js';
 // const express = require('express');
 // var cors = require('cors');
 // var app = express();
@@ -42,23 +41,6 @@ axios.interceptors.response.use(null, (error) => {
 });
 // axios.defaults.headers.common['auth-token'] = `Bearer ${getToken()}`;
 // axios.defaults.headers.common['Access-Control-Allow-Headers'] = `auth-token`;
-
-// Add a request interceptor
-axios.interceptors.request.use(
-  (config) => {
-    const token = getToken();
-    if (token) {
-      config.headers['auth-token'] = token;
-      config.headers['Access-Control-Allow-Headers'] = 'Origin,auth-token,Access-Control-Allow-Headers,Access-Control-Allow-Origin';
-      config.headers['Access-Control-Allow-Origin'] = '*';
-    }
-    // config.headers['Content-Type'] = 'application/json';
-    return config;
-  },
-  (error) => {
-    Promise.reject(error);
-  }
-);
 
 export default {
   get: axios.get,

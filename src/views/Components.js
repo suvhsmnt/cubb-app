@@ -9,21 +9,18 @@ import { makeStyles } from '@material-ui/core/styles';
 // core components
 import Header from 'components/Header/Header.js';
 import Footer from 'components/Footer/Footer.js';
-import GridContainer from '../../components/Grid/GridContainer';
-import GridItem from '../../components/Grid/GridItem.js';
+import GridContainer from '../components/Grid/GridContainer';
+import GridItem from '../components/Grid/GridItem.js';
 import History from './School/History';
 import Parallax from 'components/Parallax/Parallax.js';
 // sections for this page
-import Avatar from '@material-ui/core/Avatar';
-import AppIcon from '../../assets/img/apple-icon.png';
 import HeaderLinks from 'components/Header/HeaderLinks.js';
 import NoticeBoard from './Sections/NoticeBoard';
 import SectionAdministration from './Sections/SectionAdministration.js';
 import ImageGallaryComponent from './Sections/ImageGallaryComponent';
 import styles from 'assets/jss/material-kit-react/views/components.js';
-import http from '../../axiosInterceptor';
+import http from '../axiosInterceptor';
 import About from './School/About';
-import Logo from 'assets/img/apple-icon.png';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
