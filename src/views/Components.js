@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 // @material-ui/icons
 // core components
+
 import Header from 'components/Header/Header.js';
 import Footer from 'components/Footer/Footer.js';
 import GridContainer from '../components/Grid/GridContainer';
@@ -21,8 +22,9 @@ import ImageGallaryComponent from './Sections/ImageGallaryComponent';
 import styles from 'assets/jss/material-kit-react/views/components.js';
 import http from '../axiosInterceptor';
 import About from './School/About';
-
+import Loader from 'react-loader-spinner';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import 'react-toastify/dist/ReactToastify.css';
 import Faculty from './School/Faculty';
 import Contact from './School/Contact';
@@ -33,6 +35,7 @@ export default function Components(props) {
   const classes = useStyles();
   const { ...rest } = props;
   const [data, setData] = React.useState({});
+  const [isLoading, setLoading] = React.useState(true);
   const about = React.useRef(null);
   const history = React.useRef(null);
   const notification = React.useRef(null);
@@ -46,11 +49,14 @@ export default function Components(props) {
       const response = await http.get('https://api.npoint.io/92d107897b2ef3446be6');
       if (response.status === 200) {
         setData(response.data);
+        setLoading(false);
       }
       if (response.data.status === 404) {
+        setLoading(false);
         toast.error(response);
       }
     } catch (error) {
+      setLoading(false);
       toast.error(error.message);
     }
   };
@@ -99,105 +105,127 @@ export default function Components(props) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
+  if (isLoading) {
+    return (
+      <Loader
+        style={{
+          position: 'fixed',
+          top: '50%',
+          left: '50%',
+          marginTop: '-50px',
+          marginLeft: '-50px',
+        }}
+        type="BallTriangle"
+        color="#00BFFF"
+        height={100}
+        width={100}
+        timeout={3000} //3 secs
+      />
+    );
+  } else {
+    return (
+      <div>
+        <ToastContainer position="top-center" newestOnTop={true} />
+        <Header
+          handleBackClick={onButtonClick}
+          brand={
+            <div>
+              <GridContainer alignContent="center" alignItems="center" justify="center">
+                <GridItem xs={4} sm={4} md={4} lg={2} alignContent="center" alignItems="center" justify="center">
+                  <img src={data.logo} style={{ height: 50, width: 55 }} />
+                  {/* <Avatar alt="Remy Sharp" src={data.logo} className={classes.large} /> */}
+                </GridItem>
+                <GridItem xs={8} sm={8} md={8} lg={10} alignContent="center" alignItems="center" justify="center">
+                  <div>
+                    <h4>
+                      <b> {data.name}</b>
+                    </h4>
+                  </div>
+                </GridItem>
+              </GridContainer>
+            </div>
+          }
+          rightLinks={<HeaderLinks handleBackClick={onButtonClick} />}
+          color="custom"
+          fixed
+          handleBackClick={onButtonClick}
+          changeColorOnScroll={{
+            height: 350,
+            color: 'white',
+          }}
+          {...rest}
+        />
 
-  return (
-    <div>
-      <ToastContainer position="top-center" newestOnTop={true} />
-      <Header
-        handleBackClick={onButtonClick}
-        brand={
-          <div>
-            <GridContainer alignContent="center" alignItems="center" justify="center">
-              <GridItem xs={4} sm={4} md={4} lg={2} alignContent="center" alignItems="center" justify="center">
-                <img src={data.logo} alt="logo" style={{ height: 55, width: 55 }} />
-                {/* <Avatar alt="Remy Sharp" src={data.logo} className={classes.large} /> */}
-              </GridItem>
-              <GridItem xs={8} sm={8} md={8} lg={10} alignContent="center" alignItems="center" justify="center">
-                {data.name}
+        <Parallax image={data.img}>
+          <div className={classes.container}>
+            <GridContainer>
+              <GridItem>
+                <div className={classes.brand}>
+                  {/* <h1 className={classes.title}>Black Knight☺</h1>
+                <h3 className={classes.subtitle}>Winner winner chicken dinner☺☺♥♥☺☺.</h3> */}
+                </div>
               </GridItem>
             </GridContainer>
           </div>
-        }
-        rightLinks={<HeaderLinks handleBackClick={onButtonClick} />}
-        color="info"
-        fixed
-        handleBackClick={onButtonClick}
-        changeColorOnScroll={{
-          height: 350,
-          color: 'white',
-        }}
-        {...rest}
-      />
+        </Parallax>
 
-      <Parallax image={require('assets/img/bg1211.jpg')}>
-        <div className={classes.container}>
-          <GridContainer>
-            <GridItem>
-              <div className={classes.brand}>
-                {/* <h1 className={classes.title}>Black Knight☺</h1>
-                <h3 className={classes.subtitle}>Winner winner chicken dinner☺☺♥♥☺☺.</h3> */}
-              </div>
-            </GridItem>
-          </GridContainer>
-        </div>
-      </Parallax>
+        <div className={classNames(classes.main, classes.mainRaised)}>
+          <div ref={about}>
+            <br />
+            <About about={data.about} />
+          </div>
 
-      <div className={classNames(classes.main, classes.mainRaised)}>
-        <div ref={about}>
-          <br />
-          <About about={data.about} />
-        </div>
+          <div ref={history}>
+            <br />
+            <History history={data.history} />
+          </div>
+          <div ref={notification}>
+            <br />
+            <NoticeBoard notice={data.notice} />
+          </div>
+          <div ref={gallary}>
+            <br />
+            <ImageGallaryComponent gallary={data.gallary} />
+          </div>
+          <div ref={administration}>
+            <br />
+            <SectionAdministration administration={data.administration} />
+          </div>
+          <div ref={faculty}>
+            <br />
+            <Faculty faculties={data.faculty} />
+          </div>
+          <div ref={contact}>
+            <br />
+            <Contact contacts={data.contact} />
+          </div>
 
-        <div ref={history}>
-          <br />
-          <History history={data.history} />
-        </div>
-        <div ref={notification}>
-          <br />
-          <NoticeBoard notice={data.notice} />
-        </div>
-        <div ref={gallary}>
-          <br />
-          <ImageGallaryComponent gallary={data.gallary} />
-        </div>
-        <div ref={administration}>
-          <br />
-          <SectionAdministration administration={data.administration} />
-        </div>
-        <div ref={faculty}>
-          <br />
-          <Faculty faculties={data.faculty} />
-        </div>
-        <div ref={contact}>
-          <br />
-          <Contact contacts={data.contact} />
-        </div>
-
-        {/* <SectionPills /> */}
-        {/* <SectionJavascript /> */}
-        {/* <SectionTabs /> */}
-        {/* <SectionNavbars /> */}
-        {/* <SectionNotifications /> */}
-        {/*  <SectionNavbars />
+          {/* <SectionPills /> */}
+          {/* <SectionJavascript /> */}
+          {/* <SectionTabs /> */}
+          {/* <SectionNavbars /> */}
+          {/* <SectionNotifications /> */}
+          {/*  <SectionNavbars />
         <SectionTabs />
         <SectionPills />
     
         <SectionTypography />
         <SectionJavascript />
         <SectionCarousel />*/}
-        {/* <SectionCompletedExamples /> */}
-        {/* <SectionLogin /> */}
-        {/* <GridItem md={12} className={classes.textCenter}>
+          {/* <SectionCompletedExamples /> */}
+          {/* <SectionLogin /> */}
+          {/* <GridItem md={12} className={classes.textCenter}>
           <Link to={'/login-page'} className={classes.link}>
             <Button color="primary" size="lg" simple>
               View Login Page
             </Button>
           </Link>
         </GridItem> */}
-        {/* <SectionExamples /> */}
-        {/* <SectionDownload /> */}
+          {/* <SectionExamples /> */}
+          {/* <SectionDownload /> */}
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
-  );
+    );
+  }
 }

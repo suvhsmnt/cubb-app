@@ -16,7 +16,7 @@ axios.interceptors.response.use(null, (error) => {
     toast.error('Not Implemented.');
   } else if (error.response && error.response.status === 500) {
     // alert("There was an error on the server and the request could not be completed.")
-    toast.error(error.response.data.error[0]);
+    toast.error('Something Went wrong on our site, try reloading the page.');
   } else if (error.response && error.response.status === 502) {
     toast.error('Bad geteway');
   } else if (error.response && error.response.status === 503) {

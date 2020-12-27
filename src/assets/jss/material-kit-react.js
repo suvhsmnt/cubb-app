@@ -77,6 +77,8 @@ const roseColor = '#e91e63';
 const grayColor = '#999999';
 const darkColor = '#212121';
 
+const customColor = '#AD7C1A';
+
 const primaryBoxShadow = {
   boxShadow: '0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2)',
 };
@@ -130,6 +132,12 @@ const roseCardHeader = {
   color: '#fff',
   background: 'linear-gradient(60deg, #ec407a, #d81b60)',
   ...roseBoxShadow,
+};
+
+const customCardHeader = {
+  color: '#FFFFFF',
+  backgroundColor: customColor,
+  boxShadow: '0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(33, 33, 33, 0.46)',
 };
 const cardActions = {
   margin: '0 20px 10px',
@@ -187,6 +195,7 @@ export {
   card,
   defaultFont,
   primaryColor,
+  customColor,
   warningColor,
   dangerColor,
   successColor,
@@ -200,6 +209,7 @@ export {
   dangerBoxShadow,
   roseBoxShadow,
   warningCardHeader,
+  customCardHeader,
   successCardHeader,
   dangerCardHeader,
   infoCardHeader,

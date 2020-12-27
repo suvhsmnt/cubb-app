@@ -9,11 +9,7 @@ import ScrollBar from 'components/ScrollBar/ScollBar';
 import GridItem from 'components/Grid/GridItem.js';
 import GridContainer from 'components/Grid/GridContainer.js';
 import styles from 'assets/jss/material-kit-react/components/UpcomingStyle';
-import pubgMobile from 'assets/img/exampleNotice.jpg';
-import Slide from '@material-ui/core/Slide';
 import exampleStyle from 'assets/jss/material-kit-react/views/componentsSections/exampleStyle.js';
-import Rules from './Rules';
-import Participate from './Participate';
 
 const useStyles = makeStyles(styles);
 const exampleUseStyle = makeStyles(exampleStyle);
@@ -33,7 +29,7 @@ export default function Announcements(props) {
         announcements.map((announcement) => (
           <div style={{ marginBottom: 50 }}>
             <Card>
-              <CardHeader color="info">{announcement.title}</CardHeader>
+              <CardHeader color="custom">{announcement.title}</CardHeader>
               <CardBody>
                 <GridContainer justify="center">
                   <GridItem xs={12} sm={12} md={12}>

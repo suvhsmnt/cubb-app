@@ -1,6 +1,7 @@
 import React from 'react';
 // nodejs library that concatenates classes
 import classNames from 'classnames';
+import { customColor } from 'assets/jss/material-kit-react.js';
 // nodejs library to set properties for components
 import PropTypes from 'prop-types';
 // @material-ui/core components
@@ -18,7 +19,7 @@ const Scrollbar = {
     height: '100px',
 
     borderRadius: '5px',
-    backgroundColor: '#00acc1',
+    backgroundColor: customColor,
   },
   track_vertical: {
     position: 'absolute',

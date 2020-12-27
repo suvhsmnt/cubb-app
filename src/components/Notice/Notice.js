@@ -24,7 +24,7 @@ export default function Notice(props) {
         notices.map((notice) => (
           <div style={{ marginBottom: 50 }}>
             <Card>
-              <CardHeader color="info">
+              <CardHeader color="custom">
                 <div style={{ textAlign: 'center' }}> {notice.title}</div>
               </CardHeader>
               <CardBody>

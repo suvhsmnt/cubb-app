@@ -24,7 +24,7 @@ export default function Attachments(props) {
                 {attachment.title}
               </Grid>
               <Grid item xs={12} sm={12} md={6} lg={6} style={{ textAlign: 'end' }}>
-                <Button color="info" target="_blank" href={attachment.downloadLink}>
+                <Button color="custom" target="_blank" href={attachment.downloadLink}>
                   Download
                 </Button>
               </Grid>

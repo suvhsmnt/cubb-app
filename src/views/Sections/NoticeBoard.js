@@ -29,7 +29,7 @@ export default function NoticeBoard(props) {
     <div className={classes.section}>
       <div className={classes.container}>
         <NavPills
-          color="info"
+          color="custom"
           horizontal={{
             tabsGrid: { xs: 12, sm: 3, md: 2 },
             contentGrid: { xs: 12, sm: 9, md: 10 },

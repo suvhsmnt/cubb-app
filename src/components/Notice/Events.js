@@ -24,7 +24,7 @@ export default function Events(props) {
         events.map((event) => (
           <div style={{ marginBottom: 50 }}>
             <Card>
-              <CardHeader color="info">
+              <CardHeader color="custom">
                 <div style={{ textAlign: 'center' }}>{event.title}</div>
               </CardHeader>
               <CardBody>
