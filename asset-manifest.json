@@ -1,29 +1,27 @@
 {
   "files": {
-    "main.css": "/cubb-app/static/css/main.b71174a7.chunk.css",
-    "main.js": "/cubb-app/static/js/main.470467c4.chunk.js",
-    "main.js.map": "/cubb-app/static/js/main.470467c4.chunk.js.map",
+    "main.css": "/cubb-app/static/css/main.f4c49d8f.chunk.css",
+    "main.js": "/cubb-app/static/js/main.145167f3.chunk.js",
+    "main.js.map": "/cubb-app/static/js/main.145167f3.chunk.js.map",
     "runtime-main.js": "/cubb-app/static/js/runtime-main.42c2a0da.js",
     "runtime-main.js.map": "/cubb-app/static/js/runtime-main.42c2a0da.js.map",
-    "static/css/2.7cc276b6.chunk.css": "/cubb-app/static/css/2.7cc276b6.chunk.css",
-    "static/js/2.9ccd3208.chunk.js": "/cubb-app/static/js/2.9ccd3208.chunk.js",
-    "static/js/2.9ccd3208.chunk.js.map": "/cubb-app/static/js/2.9ccd3208.chunk.js.map",
+    "static/css/2.c990c9ec.chunk.css": "/cubb-app/static/css/2.c990c9ec.chunk.css",
+    "static/js/2.b618e86c.chunk.js": "/cubb-app/static/js/2.b618e86c.chunk.js",
+    "static/js/2.b618e86c.chunk.js.map": "/cubb-app/static/js/2.b618e86c.chunk.js.map",
     "index.html": "/cubb-app/index.html",
-    "precache-manifest.5092b33058d49dfbb751bf6054df8658.js": "/cubb-app/precache-manifest.5092b33058d49dfbb751bf6054df8658.js",
+    "precache-manifest.b262aa19b4796eb814c30dca7f2178d4.js": "/cubb-app/precache-manifest.b262aa19b4796eb814c30dca7f2178d4.js",
     "service-worker.js": "/cubb-app/service-worker.js",
-    "static/css/2.7cc276b6.chunk.css.map": "/cubb-app/static/css/2.7cc276b6.chunk.css.map",
-    "static/css/main.b71174a7.chunk.css.map": "/cubb-app/static/css/main.b71174a7.chunk.css.map",
-    "static/js/2.9ccd3208.chunk.js.LICENSE.txt": "/cubb-app/static/js/2.9ccd3208.chunk.js.LICENSE.txt",
+    "static/css/2.c990c9ec.chunk.css.map": "/cubb-app/static/css/2.c990c9ec.chunk.css.map",
+    "static/css/main.f4c49d8f.chunk.css.map": "/cubb-app/static/css/main.f4c49d8f.chunk.css.map",
+    "static/js/2.b618e86c.chunk.js.LICENSE.txt": "/cubb-app/static/js/2.b618e86c.chunk.js.LICENSE.txt",
     "static/media/avatar.jpg": "/cubb-app/static/media/avatar.f1d71f77.jpg",
-    "static/media/bg1211.jpg": "/cubb-app/static/media/bg1211.403fa15d.jpg",
-    "static/media/exampleNotice.jpg": "/cubb-app/static/media/exampleNotice.cdedf3ce.jpg",
     "static/media/slick-theme.css": "/cubb-app/static/media/slick.f97e3bbf.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.42c2a0da.js",
-    "static/css/2.7cc276b6.chunk.css",
-    "static/js/2.9ccd3208.chunk.js",
-    "static/css/main.b71174a7.chunk.css",
-    "static/js/main.470467c4.chunk.js"
+    "static/css/2.c990c9ec.chunk.css",
+    "static/js/2.b618e86c.chunk.js",
+    "static/css/main.f4c49d8f.chunk.css",
+    "static/js/main.145167f3.chunk.js"
   ]
 }
