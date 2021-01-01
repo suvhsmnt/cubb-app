@@ -21,7 +21,7 @@ export default function History(props) {
         <GridContainer justify="center">
           <GridItem xs={12} sm={12} md={8}>
             <h2>History</h2>
-            <h4>{history}</h4>
+            <div dangerouslySetInnerHTML={{ __html: history }}></div>
           </GridItem>
         </GridContainer>
       </div>

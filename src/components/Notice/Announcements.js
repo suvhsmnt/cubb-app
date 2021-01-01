@@ -25,6 +25,9 @@ export default function Announcements(props) {
 
   return (
     <ScrollBar height={550}>
+      {announcements != undefined && Object.entries(announcements).length == 0 && (
+        <div style={{ textAlign: 'center', color: 'red', fontSize: '150%' }}> Sorry no data found.</div>
+      )}
       {announcements != undefined &&
         announcements.map((announcement) => (
           <div style={{ marginBottom: 50 }}>

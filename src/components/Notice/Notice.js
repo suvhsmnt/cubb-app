@@ -31,15 +31,15 @@ export default function Notice(props) {
                 <div style={{ textAlign: 'center' }}> {notice.title}</div>
               </CardHeader>
               <CardBody>
-                <div style={{ textAlign: 'center' }}> {notice.description}</div>
+                <div style={{ textAlign: 'center' }} dangerouslySetInnerHTML={{ __html: notice.description }}></div>
               </CardBody>
               <CardFooter>
                 <GridContainer xs={12} sm={12} md={12} lg={12} alignContent="center" alignItems="center" justify="center">
                   <GridItem xs={12} sm={12} md={6} lg={6} alignContent="center" alignItems="center" justify="center">
-                    <div style={{ textAlign: 'center' }}> Time : {notice.time}</div>
+                    <div style={{ textAlign: 'center' }}> {notice.time}</div>
                   </GridItem>
                   <GridItem xs={12} sm={12} md={6} lg={6}>
-                    <div style={{ textAlign: 'center' }}> Place : {notice.place}</div>
+                    <div style={{ textAlign: 'center' }}> {notice.place}</div>
                   </GridItem>
                 </GridContainer>
               </CardFooter>
