@@ -20,6 +20,9 @@ export default function Notice(props) {
   return (
     <ScrollBar height={550}>
       <ToastContainer />
+      {notices != undefined && Object.entries(notices).length == 0 && (
+        <div style={{ textAlign: 'center', color: 'red', fontSize: '150%' }}> Sorry no data found.</div>
+      )}
       {notices != undefined &&
         notices.map((notice) => (
           <div style={{ marginBottom: 50 }}>

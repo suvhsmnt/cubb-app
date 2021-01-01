@@ -17,6 +17,9 @@ export default function Attachments(props) {
     <ScrollBar height={550}>
       <ToastContainer />
       <div>
+        {attachments != undefined && Object.entries(attachments).length == 0 && (
+          <div style={{ textAlign: 'center', color: 'red', fontSize: '150%' }}> Sorry no data found.</div>
+        )}
         {attachments.map((attachment) => (
           <Box boxShadow={3} bgcolor="background.paper" m={2} p={1}>
             <Grid container style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>

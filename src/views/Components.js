@@ -171,7 +171,6 @@ export default function Components(props) {
 
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div ref={about}>
-            <br />
             <About about={data.about} />
           </div>
 
@@ -188,11 +187,9 @@ export default function Components(props) {
             <ImageGallaryComponent gallary={data.gallary} />
           </div>
           <div ref={administration}>
-            <br />
             <SectionAdministration administration={data.administration} />
           </div>
           <div ref={faculty}>
-            <br />
             <Faculty faculties={data.faculty} />
           </div>
           <div ref={contact}>

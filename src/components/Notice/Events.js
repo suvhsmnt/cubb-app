@@ -20,6 +20,9 @@ export default function Events(props) {
   return (
     <ScrollBar height={550}>
       <ToastContainer />
+      {events != undefined && Object.entries(events).length == 0 && (
+        <div style={{ textAlign: 'center', color: 'red', fontSize: '150%' }}> Sorry no data found.</div>
+      )}
       {events != undefined &&
         events.map((event) => (
           <div style={{ marginBottom: 50 }}>

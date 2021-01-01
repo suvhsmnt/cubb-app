@@ -118,7 +118,6 @@ export default function SectionAdministration(props) {
                 <img src={slide.link} alt="..." className={classes.imgRounded + ' ' + classes.imgFluid} />
                 <h6 className="slick-slide-title">{slide.name}</h6>
                 <h6 className="slick-slide-title">{slide.designation}</h6>
-                <h6 className="slick-slide-title">{slide.qualification}</h6>
               </div>
             ))}
         </Slider>
